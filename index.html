@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body onload="changeBg()">
+    <header>
+      <h1>POKEMON APP</h1>
+    </header>
+    <nav>
+      <h2>Pokédex</h2>
+      <hr>
+      <section id="contenedor-carta">
+        <p>Selecciona un pokemon</p>
+      </section>
+    </nav>
+    <main>
+      <h2>Listado</h2>
+      <section id="contenedor-listado"></section>
+    </main>
+    <script src="./js/app.js"></script>
+    <script>
+      let changeBg = () =>{
+        const simbolos = [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+        ];
+        let color = "",
+          random;
+
+        for (i = 0; i < 6; i++) {
+          random = Math.round(Math.random() * 14);
+          color += `${simbolos[random]}`;
+        }
+
+        document.querySelector(`body`).style.backgroundColor = `#${color}`;
+      }
+
+      setInterval(changeBg, 4500)
+    </script>
+  </body>
+</html>
