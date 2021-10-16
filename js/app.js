@@ -1,4 +1,4 @@
-fetch("https://pokeapi.co/api/v2/pokemon/?limit=1800")
+fetch("https://pokeapi.co/api/v2/pokemon/?limit=79")
   .then((response) => response.json())
   .then((data) => cargarListado(data))
   .catch((error) => console.log(error));
@@ -16,42 +16,7 @@ let cargarListado = (data) => {
       cargarPokemon(boton.innerHTML)
     });
   });
-
-  
-
-  let changeBg = () =>{
-    const simbolos = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-    ];
-    let color = "",
-      random;
-
-    for (i = 0; i < 6; i++) {
-      random = Math.round(Math.random() * 14);
-      color += `${simbolos[random]}`;
-    }
-
-    document.querySelectorAll("button").forEach(function(boton){
-      boton.style.backgroundColor = `#${color}`
-    })
-  }
-
-  setInterval(changeBg, 4500)
-};
+}
 
 let crearBoton = (poke) => {
   let lista = document.querySelector("#contenedor-listado");
@@ -67,6 +32,7 @@ function cargarPokemon(pokemon) {
 
 function crearCarta(poke) {
   let contenedor = document.querySelector("#contenedor-carta");
-  contenedor.innerHTML = `<h1>${poke.name}</h1>`+ 
-  `<img src='${poke.sprites.front_default}' height=200px%;/>` 
+  contenedor.innerHTML = `<h4>${poke.name}</h4>`+ 
+  `<img src='${poke.sprites.front_default}' height=200px%;/>`+
+  `<h5>ID: ${poke.id}</h5>`
 }                                                                                                       {}
