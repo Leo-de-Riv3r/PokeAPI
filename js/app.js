@@ -34,5 +34,5 @@ function crearCarta(poke) {
   let contenedor = document.querySelector("#contenedor-carta");
   contenedor.innerHTML = `<h4>${poke.name}</h4>`+ 
   `<img src='${poke.sprites.front_default}' height=200px%;/>`+
-  `<h5>ID: ${poke.id}</h5>`
+  `<h5>Peso: ${poke.weight}Kg</h5>`
 }                                                                                                       {}
